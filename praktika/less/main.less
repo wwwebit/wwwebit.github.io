@@ -45,6 +45,16 @@
  body {
   .reg();
  }
+ a {
+  &:hover {
+    text-decoration: none;
+  }
+ }
+ button, input, a {
+  &:focus {
+    outline: none;
+  }
+ }
  .button {
   padding: 1rem 3rem;
   border-radius: 8px;
@@ -54,12 +64,23 @@
   font-size: 12px;
   text-transform: uppercase;
   border: none;
+  transition: all 0.3s;
+  &:hover {
+    cursor: pointer;
+    background-color: lighten(@btn-color, 15%);
+   }
  }
-
+  
  /* Typography */
  section {
   padding: 10rem 0;
  }
+ .section-header {
+    text-align: center;
+    margin: 2rem 0 7rem;
+    .bold();
+    font-size: 3.5rem;
+  }
 
  /* Main */
   .main {
@@ -128,7 +149,8 @@
       label {
         display: inline-block;
         padding: 0.5rem;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        .bold();
         position: absolute;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
@@ -164,6 +186,7 @@
   }
   .phone {
     &-block {
+      font-size: 1.5rem;
       text-align: right;
     }
     &-link {
@@ -175,3 +198,88 @@
       color: @text;
     }
   }
+
+  /* Оформление секции с преимуществами */
+  .features {
+    &-block {
+      text-align: center;
+      h3 {
+        font-size: 2rem;
+        .bold();
+        margin-bottom: 2rem;
+      }
+      p {
+        display: inline-block;
+        width: 80%;
+        font-size: 1.4rem;
+      }
+    }
+    &-img {
+      height: 8rem;
+      margin-bottom: 3rem;
+      img {
+      display: block;
+      margin: 0 auto;
+      }
+    }
+  }
+  .slick-active {
+    outline: none;
+  }
+  .arrow {
+    top: 50px;
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: 99;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+  }
+  .prev {
+    background: url(../img/left-arrow.svg) center no-repeat;
+    left: 0;
+    background-size: 70%;
+  }
+  .next {
+    background: url(../img/right-arrow.svg) center no-repeat;
+    right: 0;
+    background-size: 70%;
+  }
+
+  @media (max-width: 991px) {
+    .main {
+      background-position: top right;
+    }
+    .phone-block {
+      text-align: center;
+    }
+    .main-content {
+      margin-top: 3rem;
+    }
+    .main-title {
+      text-align: center;
+      padding-bottom: 3rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .main {
+      background-position: top left;
+    }
+    .main-content {
+      margin-top: 15rem;
+    }
+    .header {
+      text-align: center;
+    }
+    .wrap-block {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .main-content h1 {
+      font-size: 2rem;
+    }
+  }
+

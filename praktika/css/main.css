@@ -21,6 +21,14 @@ html {
 body {
   font-family: 'ProximaNova_reg', sans-serif;
 }
+a:hover {
+  text-decoration: none;
+}
+button:focus,
+input:focus,
+a:focus {
+  outline: none;
+}
 .button {
   padding: 1rem 3rem;
   border-radius: 8px;
@@ -30,10 +38,22 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   border: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: #fec94b;
 }
 /* Typography */
 section {
   padding: 10rem 0;
+}
+.section-header {
+  text-align: center;
+  margin: 2rem 0 7rem;
+  font-family: 'ProximaNova_bold', sans-serif;
+  font-size: 3.5rem;
 }
 /* Main */
 .main {
@@ -104,7 +124,8 @@ section {
 .main-form label {
   display: inline-block;
   padding: 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-family: 'ProximaNova_bold', sans-serif;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
@@ -136,6 +157,7 @@ section {
   text-align: right;
 }
 .phone-block {
+  font-size: 1.5rem;
   text-align: right;
 }
 .phone-link {
@@ -145,4 +167,83 @@ section {
   height: 7rem;
   line-height: 7rem;
   color: #1a1820;
+}
+/* Оформление секции с преимуществами */
+.features-block {
+  text-align: center;
+}
+.features-block h3 {
+  font-size: 2rem;
+  font-family: 'ProximaNova_bold', sans-serif;
+  margin-bottom: 2rem;
+}
+.features-block p {
+  display: inline-block;
+  width: 80%;
+  font-size: 1.4rem;
+}
+.features-img {
+  height: 8rem;
+  margin-bottom: 3rem;
+}
+.features-img img {
+  display: block;
+  margin: 0 auto;
+}
+.slick-active {
+  outline: none;
+}
+.arrow {
+  top: 50px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  z-index: 99;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+}
+.prev {
+  background: url(../img/left-arrow.svg) center no-repeat;
+  left: 0;
+  background-size: 70%;
+}
+.next {
+  background: url(../img/right-arrow.svg) center no-repeat;
+  right: 0;
+  background-size: 70%;
+}
+@media (max-width: 991px) {
+  .main {
+    background-position: top right;
+  }
+  .phone-block {
+    text-align: center;
+  }
+  .main-content {
+    margin-top: 3rem;
+  }
+  .main-title {
+    text-align: center;
+    padding-bottom: 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .main {
+    background-position: top left;
+  }
+  .main-content {
+    margin-top: 15rem;
+  }
+  .header {
+    text-align: center;
+  }
+  .wrap-block {
+    text-align: center;
+  }
+}
+@media (max-width: 575px) {
+  .main-content h1 {
+    font-size: 2rem;
+  }
 }
