@@ -35,7 +35,7 @@
           <div class="col-md-3 ml-md-auto col-sm-12">
             <div class="wrap">
               <div class="wrap-block">
-                <button class="button header-btn">
+                <button class="button header-btn popup-btn">
                   Получить консультацию
                 </button>
               </div>
@@ -145,6 +145,94 @@
     </div>
   </section>
 
+  <section class="price">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 offset-md-4">
+          <div class="section-header section-header_light">
+            <h2>Цены</h2>
+            <p>Выберите вариант для Вас</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="price-btn">
+            <button data-toggle="modal" class="button header-btn">Рассчитайте точную стоимость</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 offset-md-0 col-sm-8 offset-sm-2">
+          <div class="price-block">
+            <h4>Штукатурка вашим материалом</h4>
+            <img src="img/prices/1.jpg" alt="Штукатурка вашим материалом">
+            <span class="price-tag">от 300 руб/м<sup>2</sup></span>
+            <ul class="price-list">
+              <li>Проведение работ</li>
+              <li>Уборка</li>
+            </ul>
+            <button class="button">Заказать</button>
+          </div>
+        </div>
+        <div class="col-md-4 offset-md-0 col-sm-8 offset-sm-2">
+          <div class="price-block">
+            <h4>Штукатурка под шпатлевку</h4>
+            <img src="img/prices/2.jpg" alt="Штукатурка под шпатлевку">
+            <span class="price-tag">от 540 руб/м</span>
+            <ul class="price-list">
+              <li>Завоз материала и его подъем</li>
+              <li>Проведение работ</li>
+              <li>Уборка</li>
+              <li>Гарантия 2 года</li>
+            </ul>
+            <button class="button">Заказать</button>
+          </div>
+        </div>
+        <div class="col-md-4 offset-md-0 col-sm-8 offset-sm-2">
+          <div class="price-block">
+            <h4>Штукатурка под обои</h4>
+            <img src="img/prices/3.jpg" alt="Штукатурка под обои">
+            <span class="price-tag">от 560 руб/м</span>
+            <ul class="price-list">
+              <li>Завоз материала и его подъем</li>
+              <li>Проведение работ</li>
+              <li>Уборка</li>
+              <li>Гарантия 2 года</li>
+              <li>Можно сразу клеить обои</li>
+            </ul>
+            <button class="button">Заказать</button>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </section>
+
+
+    <!-- Модальные окна -->
+    <!-- Получить консультацию -->
+    <div class="popup">
+      <!-- Само (белое) модальное окно -->
+      <div class="popup-dialog">
+        <div class="popup-content">
+          <button class="popup-close">&times;</button>
+          <h4 class="popup-header">
+            Заинетерсовало?
+          </h4>
+          <p>Оставьте свои контактные данные <br>для связи</p>
+          <div class="main-form popup-form">
+            <form action="#">
+              <label for="#">Ваше имя</label>
+              <input type="text" class="main-form-input">
+              <label for="#">Ваш номер телефона</label>
+              <input type="text" class="main-form-input">
+              <label for="#">Сообщение</label>
+              <textarea class="main-form-input" rows="5"></textarea>
+              <button type="submit" class="main-form-btn button">Оставьте заявку</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Подключаем стили slick slider -->
@@ -155,6 +243,14 @@
     <!-- Инициализируем слайдер -->
     <script>
       $(document).ready(function(){
+        $('.popup-btn').on('click', function(event) {
+          event.preventDefault();
+          $('.popup').fadeIn();
+        });
+        $('.popup-close').on('click', function(event) {
+          event.preventDefault();
+          $('.popup').fadeOut();
+        });
         $('.features-slider').slick({
          infinite: true,
          slidesToShow: 4,

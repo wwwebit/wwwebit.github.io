@@ -50,7 +50,7 @@
     text-decoration: none;
   }
  }
- button, input, a {
+ button, input, a, textarea {
   &:focus {
     outline: none;
   }
@@ -76,10 +76,18 @@
   padding: 10rem 0;
  }
  .section-header {
-    text-align: center;
-    margin: 2rem 0 7rem;
+  &_light {
+    color: @light;
+  }
+  h2 {
     .bold();
     font-size: 3.5rem;
+  }
+  p {
+    font-size: 1.7rem;
+  }
+  text-align: center;
+  margin: 0.5rem 0 7rem;
   }
 
  /* Main */
@@ -141,6 +149,7 @@
       &-input {
         display: block;
         border: 1px solid @border-input;
+        border-radius: 5px;
         width: 100%;
         padding: 1.5rem;
         margin: 2rem 0;
@@ -246,6 +255,104 @@
     background-size: 70%;
   }
 
+  /* Секция с ценами */
+  .price {
+    background: @icons-color url(../img/prices/prices-bg.jpg) repeat center;
+    &-header-btn {
+      margin-top: 2.5rem;
+    }
+    &-btn {
+      text-align: right;
+    }
+    &-block {
+      padding: 1rem 3rem 2.5rem;
+      min-height: 50rem;
+      background-color: @light;
+      box-shadow: 7px 12px 21px 0 rgba(0,0,0,0.17);
+      text-align: center;
+      h4 {
+        margin: 3rem 0;
+        font-size: 1.9rem;
+        .bold();
+      }
+      img {
+        display: inline-block;
+        margin-bottom: 2rem;
+        width: 100%;
+        max-width: 30rem;
+      }
+    }
+    &-tag {
+      display: block;
+      margin: 2rem 0;
+      font-size: 1.9rem;
+      .bold();
+    }
+    &-list {
+      min-height: 14rem;
+      line-height: 1.6;
+      list-style: none;
+      padding: 0;
+      font-size: 1.6rem;
+      li {
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 1.4rem;
+          height: 2.4rem;
+          background: url(../img/prices/checked.svg) no-repeat center;
+          background-size: 100%;
+          vertical-align: middle;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+
+  /* Оформление всплывающих окон */
+  .popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: rgba(0,0,0,0.5);
+    &-content {
+      position: fixed;
+      left: 50%;
+      top: 10%;
+      background-color: @light;
+      transform: translateX(-50%);
+      padding: 5rem 8rem;
+    }
+    &-form {
+      margin-top: 3rem;
+      padding: 0;
+    }
+    &-close {
+      position: absolute;
+      top: -1.5rem;
+      right: -2rem;
+      width: 2rem;
+      text-align: center;
+      border: none;
+      background-color: transparent;
+      font-size: 3rem;
+      color: @light;
+    }
+    &-content {
+      text-align: center;
+    }
+    &-header {
+      .bold();
+      font-size: 2rem;
+    }
+  }
+
   @media (max-width: 991px) {
     .main {
       background-position: top right;
@@ -259,6 +366,22 @@
     .main-title {
       text-align: center;
       padding-bottom: 3rem;
+    }
+    .price {
+      &-btn {
+        text-align: center;
+        padding: 2rem 0;
+      }
+      &-header-btn {
+        margin-bottom: 0;
+      }
+      &-block {
+        margin-top: 2rem;
+      }
+      .section-header_light {
+        margin-top: 0;
+        margin-bottom: 2rem;
+      }
     }
   }
 
